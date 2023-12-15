@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "342381175503",
+    "project_id": "juyostats-45293",
+    "storage_bucket": "juyostats-45293.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342381175503:android:ada010f3de67945ff60dba",
+        "android_client_info": {
+          "package_name": "com.juyostats.juyostats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342381175503-hcehv169c62vghs44ctutl3aqprs3b7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYI_XtpYQF1kgI7TfZVu0D-9WadRvwDJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342381175503-hcehv169c62vghs44ctutl3aqprs3b7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
