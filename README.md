@@ -7,4 +7,5 @@ The main reason for the lack of sporting success in our country for a long time 
 2. Aim and purpose of the project
 
 The aim of the project is to monitor and evaluate the athletes in the infrastructures who are candidates for professionalism and to identify and benefit from the athletes who are candidates for the athlete scholarship granted by the State for secondary, high school and university. The aim is to facilitate the identification of these young athletes for the benefit of young athletes, which is the main objective of the project.
-![Uploading Screenshot_20231216_000526-portrait.png…]()
+
+![Screenshot_20231216_000526-portrait](https://github.com/intotechwj/juyostats/assets/66175299/6a14a671-8486-4be6-91fd-f3147ddbc51d)
