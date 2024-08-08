@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
-  const RegisterPage({Key? key,required this.showLoginPage}) : super(key: key);
+  const RegisterPage({Key? key, required this.showLoginPage}) : super(key: key);
 
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -27,38 +27,40 @@ class _RegisterPageState extends State<RegisterPage> {
     _ageController.dispose();
     super.dispose();
   }
-Future signUp() async {
-if(passwordConfirmed()){
-  await FirebaseAuth.instance.createUserWithEmailAndPassword(
-    email: _emailController.text.trim(),
-    password: _passwordController.text.trim(),
-  );
-  addUserDetails(
-      _firstNameController.text.trim(),
-      _lastNameController.text.trim(),
-      _emailController.text.trim(),
-      int.parse(_ageController.text.trim()),
 
-  );
-}
-}
+  Future signUp() async {
+    if (passwordConfirmed()) {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+      addUserDetails(
+        _firstNameController.text.trim(),
+        _lastNameController.text.trim(),
+        _emailController.text.trim(),
+        int.parse(_ageController.text.trim()),
+      );
+    }
+  }
 
-Future addUserDetails(String firstName, String lastName, String email, int age) async {
+  Future addUserDetails(
+      String firstName, String lastName, String email, int age) async {
     await FirebaseFirestore.instance.collection("users").add({
       'first name': firstName,
       'last name': lastName,
       'email': email,
       'age': age,
     });
-}
+  }
 
-bool passwordConfirmed(){
-    if(_passwordController.text.trim() == _confirmPasswordController.text.trim()){
+  bool passwordConfirmed() {
+    if (_passwordController.text.trim() ==
+        _confirmPasswordController.text.trim()) {
       return true;
-    }else{
+    } else {
       return false;
     }
-}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,17 +71,15 @@ bool passwordConfirmed(){
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
-
-
-                  SizedBox(height:10),
-                  Text(
+                children: [
+                  const SizedBox(height: 10),
+                  const Text(
                     'JUYO Stats',
-                    style: TextStyle(fontWeight: FontWeight.bold,
-                        fontSize: 36
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
 
                   //first name alanı
                   Padding(
@@ -94,7 +94,7 @@ bool passwordConfirmed(){
                         padding: const EdgeInsets.only(left: 20.0),
                         child: TextField(
                           controller: _firstNameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Adınız',
                           ),
@@ -102,7 +102,9 @@ bool passwordConfirmed(){
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
 
                   //last name alanı
                   Padding(
@@ -117,7 +119,7 @@ bool passwordConfirmed(){
                         padding: const EdgeInsets.only(left: 20.0),
                         child: TextField(
                           controller: _lastNameController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Soyadınız',
                           ),
@@ -125,7 +127,9 @@ bool passwordConfirmed(){
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
 
                   //age alanı
                   Padding(
@@ -140,7 +144,7 @@ bool passwordConfirmed(){
                         padding: const EdgeInsets.only(left: 20.0),
                         child: TextField(
                           controller: _ageController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Yaşınız',
                           ),
@@ -148,9 +152,9 @@ bool passwordConfirmed(){
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
-
-
+                  const SizedBox(
+                    height: 10,
+                  ),
 
                   //email alanı
                   Padding(
@@ -165,7 +169,7 @@ bool passwordConfirmed(){
                         padding: const EdgeInsets.only(left: 20.0),
                         child: TextField(
                           controller: _emailController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Email',
                           ),
@@ -173,10 +177,9 @@ bool passwordConfirmed(){
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
-
-
-
+                  const SizedBox(
+                    height: 10,
+                  ),
 
                   //şifre alanı
                   Padding(
@@ -192,7 +195,7 @@ bool passwordConfirmed(){
                         child: TextField(
                           controller: _passwordController,
                           obscureText: true,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Şifre',
                           ),
@@ -200,7 +203,9 @@ bool passwordConfirmed(){
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
 
                   //şifre onaylama alanı
                   Padding(
@@ -216,7 +221,7 @@ bool passwordConfirmed(){
                         child: TextField(
                           controller: _confirmPasswordController,
                           obscureText: true,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                             hintText: 'Şifreni Onayla',
                           ),
@@ -224,7 +229,9 @@ bool passwordConfirmed(){
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
 
                   //giris butonu
                   Padding(
@@ -232,57 +239,51 @@ bool passwordConfirmed(){
                     child: GestureDetector(
                       onTap: signUp,
                       child: Container(
-                        padding: EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
                             color: Colors.teal,
-                            borderRadius: BorderRadius.circular(12)
-                        ),
-                        child: Center(child: Text(
-                          'Kayıt Ol',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            borderRadius: BorderRadius.circular(12)),
+                        child: const Center(
+                          child: Text(
+                            'Kayıt Ol',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
-                        ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 25,),
+                  const SizedBox(
+                    height: 25,
+                  ),
 
                   //kayıt ol
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        child: Text(
-                            'Üye Misin?',
+                        child: const Text('Üye Misin?',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
                       ),
                       GestureDetector(
                         onTap: widget.showLoginPage,
-                        child: Text(
-                            ' Giriş Yap',
+                        child: const Text(' Giriş Yap',
                             style: TextStyle(
                               color: Colors.blue,
                               fontWeight: FontWeight.bold,
-                            )
-                        ),
+                            )),
                       )
                     ],
                   )
-
-
-
-
-                ]
-                ,),
+                ],
+              ),
             ),
           ),
-        )
-    );
+        ));
   }
 }

@@ -1,18 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:juyostats/components/my_bottom_nav_bar.dart';
 import 'package:juyostats/home_page.dart';
 import 'package:juyostats/login_page.dart';
 import 'package:juyostats/about_page.dart';
+import 'package:juyostats/main_page.dart';
 import 'package:juyostats/profile_crud.dart';
 import 'package:juyostats/profile_page.dart';
 import 'package:juyostats/setting_page.dart';
 import 'package:juyostats/spdeneme.dart';
-import 'package:search_page/search_page.dart';
 
 class MyDrawer extends StatelessWidget {
-   const MyDrawer({super.key});
+  const MyDrawer({super.key});
 
-   get user => FirebaseAuth.instance.currentUser!;
+  get user => FirebaseAuth.instance.currentUser!;
 
   // method to log user out
   void logUserOut(BuildContext context) {
@@ -59,7 +60,7 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.black,
               ),
               onTap: () {},
-              title: Text(
+              title: const Text(
                 'X olarak giriş yapıldı',
                 style: TextStyle(
                   color: Colors.black,
@@ -77,11 +78,11 @@ class MyDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const HomePage(),
+                    builder: (context) => const MainPage(),
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.home_rounded,
                   color: Colors.black,
@@ -107,7 +108,7 @@ class MyDrawer extends StatelessWidget {
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.search_rounded,
                   color: Colors.black,
@@ -119,7 +120,6 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -133,7 +133,7 @@ class MyDrawer extends StatelessWidget {
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.person_rounded,
                   color: Colors.black,
@@ -145,7 +145,6 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -159,7 +158,7 @@ class MyDrawer extends StatelessWidget {
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.people_rounded,
                   color: Colors.black,
@@ -180,11 +179,11 @@ class MyDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>  SettingPage(),
+                    builder: (context) => const SettingPage(),
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.settings_rounded,
                   color: Colors.black,
@@ -196,7 +195,6 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-
 
           // ABOUT PAGE
           Padding(
@@ -211,7 +209,7 @@ class MyDrawer extends StatelessWidget {
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.info,
                   color: Colors.black,
@@ -233,7 +231,7 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.black,
               ),
               onTap: () => logUserOut(context),
-              title: Text(
+              title: const Text(
                 "Çıkış Yap",
                 style: TextStyle(color: Colors.black),
               ),

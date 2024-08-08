@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:juyostats/main_page.dart';
-import 'package:juyostats/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +20,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
+//

@@ -1,8 +1,9 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings
+
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:juyostats/stat_page.dart';
-import 'package:path_provider/path_provider.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   Query dbRef = FirebaseDatabase.instance.ref().child('users');
   DatabaseReference reference = FirebaseDatabase.instance.ref().child('users');
+  // ignore: unused_field
   final TextEditingController _searchController = TextEditingController();
 
   Widget listItem({required Map users}) {
@@ -45,30 +47,34 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               Text(
                 'Ad: ' + users['AD'],
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
                 'Soyad: ' + users['SOYAD'],
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
               const SizedBox(
                 height: 5,
               ),
               Text(
                 'Pozisyon: ' + users['POZİSYON'],
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
               Text(
                 'Yaş: ' + users['YAŞ'],
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'İstatistikler: ',
                 style: TextStyle(
                   fontSize: 16,
@@ -83,13 +89,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.group_add_rounded,
                       color: Colors.black,
                     ),
                     title: Text(
                       users['MAÇ'],
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -103,13 +109,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.sports_soccer_rounded,
                       color: Colors.black,
                     ),
                     title: Text(
                       users['GOL'],
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -123,13 +129,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.assistant_direction_outlined,
                       color: Colors.black,
                     ),
                     title: Text(
                       users['ASİST'],
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -143,13 +149,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.square_rounded,
                       color: Colors.yellow,
                     ),
                     title: Text(
                       users['SARI'],
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -163,22 +169,22 @@ class _ProfilePageState extends State<ProfilePage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.square_rounded,
                       color: Colors.red,
                     ),
                     title: Text(
                       users['KIRMIZI'],
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     width: 6,
                   ),
                 ],
@@ -194,7 +200,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        body: Container(
+        body: SizedBox(
           height: double.infinity,
           child: FirebaseAnimatedList(
             query: dbRef,

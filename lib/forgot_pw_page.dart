@@ -17,27 +17,27 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     super.dispose();
   }
 
-  Future passwordReset() async{
-    try{
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: _emailController.text.trim());
+  Future passwordReset() async {
+    try {
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: _emailController.text.trim());
       showDialog(
           context: context,
-          builder: (context){
-            return AlertDialog(
-              content: Text('Şifreniz sıfırlanmıştır. E-mailinizi kontrol ediniz.'),
+          builder: (context) {
+            return const AlertDialog(
+              content:
+                  Text('Şifreniz sıfırlanmıştır. E-mailinizi kontrol ediniz.'),
             );
-          }
-      );
-    }on FirebaseAuthException catch(e){
+          });
+    } on FirebaseAuthException catch (e) {
       print(e);
       showDialog(
-        context: context,
-        builder: (context){
-          return AlertDialog(
-            content: Text(e.message.toString()),
-          );
-        }
-      );
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text(e.message.toString()),
+            );
+          });
     }
   }
 
@@ -51,15 +51,15 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
             child: Text(
               'E-mailinizi giriniz. Şifre sıfırlama linkiniz emailinize yollanacaktır.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           //email alanı
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -73,7 +73,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 padding: const EdgeInsets.only(left: 20.0),
                 child: TextField(
                   controller: _emailController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: InputBorder.none,
                     hintText: 'Email',
                   ),
@@ -81,12 +81,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           MaterialButton(
-              onPressed: passwordReset,
-            child: Text('Şifrenizi sıfırlayın.'),
+            onPressed: passwordReset,
+            child: const Text('Şifrenizi sıfırlayın.'),
             color: Colors.teal,
-              ),
+          ),
         ],
       ),
     );

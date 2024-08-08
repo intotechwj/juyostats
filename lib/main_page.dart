@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:juyostats/auth_page.dart';
-import 'package:juyostats/login_page.dart';
 import 'package:juyostats/home_page.dart';
 import 'package:juyostats/match_page.dart';
 import 'package:juyostats/profile_crud.dart';
@@ -10,30 +9,26 @@ import 'package:juyostats/profile_page.dart';
 import 'components/my_bottom_nav_bar.dart';
 import 'components/my_drawer.dart';
 
-
-
-  class MainPage extends StatefulWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
   @override
   State<MainPage> createState() => _MainPageState();
-  }
+}
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: StreamBuilder<User?>(
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-          if (snapshot.hasData){
-          return HomePage();
-          }else{
-            return AuthPage();
+          if (snapshot.hasData) {
+            return const HomePage();
+          } else {
+            return const AuthPage();
           }
-        }
-        ) ,
-      );
-  }
-
+        }),
+  );
+}
 
 class _MainPageState extends State<MainPage> {
   // This selected index is to control the bottom nav bar
@@ -62,12 +57,11 @@ class _MainPageState extends State<MainPage> {
     const ProfileCrud(),
 
     // setting page
-     const SettingPage(),
+    const SettingPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(

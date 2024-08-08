@@ -1,14 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:juyostats/help_page.dart';
-import 'package:juyostats/home_page.dart';
 import 'package:juyostats/login_page.dart';
-import 'package:juyostats/about_page.dart';
-import 'package:juyostats/profile_crud.dart';
-import 'package:juyostats/profile_page.dart';
-import 'package:juyostats/setting_page.dart';
-import 'package:juyostats/spdeneme.dart';
-import 'package:search_page/search_page.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -41,62 +34,60 @@ class SettingPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView(padding: const EdgeInsets.all(5), children: <Widget>[
-            Container(
-              child: Column(
-                children: [
-                  Center(
-                    child: SingleChildScrollView(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                        ),
-                        alignment: Alignment.topCenter,
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Image.network(
-                              'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-                              height: 150,
-                              width: 150,
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                decoration: BoxDecoration(),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'X olarak giriş yapıldı',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 12,
-                                        ),
+            Column(
+              children: [
+                Center(
+                  child: SingleChildScrollView(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      alignment: Alignment.topCenter,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Image.network(
+                            'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+                            height: 150,
+                            width: 150,
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: const BoxDecoration(),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'X olarak giriş yapıldı',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                          ],
-                        ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -115,7 +106,7 @@ class SettingPage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: ListTile(
+                    child: const ListTile(
                       leading: Icon(
                         Icons.info,
                         color: Colors.black,
@@ -130,7 +121,7 @@ class SettingPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               height: 50,
               color: Colors.white,
@@ -143,7 +134,7 @@ class SettingPage extends StatelessWidget {
                       color: Colors.black,
                     ),
                     onTap: () => logUserOut(context),
-                    title: Text(
+                    title: const Text(
                       textAlign: TextAlign.left,
                       "Çıkış Yap",
                       style: TextStyle(color: Colors.black),

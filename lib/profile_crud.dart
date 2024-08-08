@@ -1,13 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:juyostats/auth_page.dart';
-import 'package:juyostats/login_page.dart';
-import 'package:juyostats/home_page.dart';
-import 'package:juyostats/match_page.dart';
-import 'package:juyostats/setting_page.dart';
-import 'package:juyostats/profile_page.dart';
-import 'components/my_bottom_nav_bar.dart';
-import 'components/my_drawer.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class ProfileCrud extends StatefulWidget {
@@ -41,7 +33,7 @@ class _ProfileCrudState extends State<ProfileCrud> {
         showDialog(
             context: context,
             builder: (context) {
-              return AlertDialog(
+              return const AlertDialog(
                 content: Text(
                     'Şifreniz sıfırlanmıştır. E-mailinizi kontrol ediniz.'),
               );
@@ -65,7 +57,7 @@ class _ProfileCrudState extends State<ProfileCrud> {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
                 const SizedBox(
