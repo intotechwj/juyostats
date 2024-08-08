@@ -211,11 +211,11 @@ class _ProfileCrudState extends State<ProfileCrud> {
 
                     dbRef.push().set(users);
                   },
-                  child: const Text('Sporcu Ekle'),
                   color: Colors.teal,
                   textColor: Colors.black,
                   minWidth: 300,
                   height: 40,
+                  child: const Text('Sporcu Ekle'),
                 ),
               ],
             ),

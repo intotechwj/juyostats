@@ -113,7 +113,7 @@ class _StatPageState extends State<StatPage> {
                         ),
 
                         const Center(
-                            child: const Text(
+                            child: Text(
                                 'M: Maç  G: Gol  A: Asist  S: Sarı  K: Kırmızı  22: 2022  23: 2023')),
 
                         const SizedBox(

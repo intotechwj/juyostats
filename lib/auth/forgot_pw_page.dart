@@ -5,6 +5,7 @@ class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ForgotPasswordPageState createState() => _ForgotPasswordPageState();
 }
 
@@ -84,8 +85,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           const SizedBox(height: 10),
           MaterialButton(
             onPressed: passwordReset,
-            child: const Text('Şifrenizi sıfırlayın.'),
             color: Colors.teal,
+            child: const Text('Şifrenizi sıfırlayın.'),
           ),
         ],
       ),

@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:juyostats/components/my_bottom_nav_bar.dart';
-import 'package:juyostats/home_page.dart';
 import 'package:juyostats/login_page.dart';
 import 'package:juyostats/about_page.dart';
 import 'package:juyostats/main_page.dart';
